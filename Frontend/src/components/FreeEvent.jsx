@@ -48,6 +48,7 @@ function FreeEvent() {
 
       const customStyles = {
         content: {
+          position: 'relative',
           top: '50%',
           left: '50%',
           right: 'auto',
@@ -112,12 +113,14 @@ function FreeEvent() {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
+        className='bg-slate-300 border border-black bg-base-100 shadow-xl  rounded-xl'
         // className='h-[70%] w-[70%] mt-28 items-center justify-center text-center'
       >
-        <figure className='flex flex-col justify-center items-center mt-12'>
-            <img src={cardDetails.eventImage} alt="event"  width={"50%"} height={"50%"} />
+        <button className="btn btn-sm btn-circle btn-ghost absolute top-4 right-4 text-black" onClick={closeModal}>✕</button>
+
+        <figure className='flex flex-col justify-center items-center  '>
+            <img className='mt-12' src={cardDetails.eventImage} alt="event"  width={"50%"} height={"50%"} />
             <h2 className="font-bold text-lg text-black">{cardDetails.eventName}</h2>
-            <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2" onClick={closeModal}>✕</button>
             <div className='flex flex-row text-pink-400'>
               <div className='pl-12  pr-4'>{cardDetails.date}</div>
               <div className='pl-4  pr-12'>{cardDetails.location}</div>
